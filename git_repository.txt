@@ -1,0 +1,11 @@
+- In the main user space create GitHub folder -
+
+git init [DIRECTORY NAME]
+
+git status
+
+git add "filename1" "filename2"
+
+git commit -m "Your message"
+
+git push origin master
