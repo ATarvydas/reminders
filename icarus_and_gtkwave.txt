@@ -2,7 +2,7 @@ sudo apt-get install iverilog
 sudo apt-get install gtkwave
 
 
-- Create test.v file -
+- Create a test.v file -
 - copy/paste -
 module main;
 initial

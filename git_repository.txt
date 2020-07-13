@@ -1,11 +1,21 @@
-- In the main user space create GitHub folder -
+sudo apt-get install git
 
-git init [DIRECTORY NAME]
+git config --global user.name "GitHub USERNAMEatarvydas"
+git config --global user.email "youremail@email.com"
+git config --list
+
+- Config file: -
+cd ~
+emacs .gitconfig &
+
+git clone https://github.com/ATarvydas/reminders.git
+
+touch test.txt
 
 git status
 
-git add "filename1" "filename2"
+git add filename1test.txt
 
 git commit -m "Your message"
 
-git push origin master
+git push -u origin master
