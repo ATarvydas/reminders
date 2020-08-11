@@ -18,7 +18,7 @@ endmodule // main
 iverilog test.v -o test
 vvp test
 
-...But this model only displays a message.
+
 
 
 How to use gtkwave?

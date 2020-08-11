@@ -4,9 +4,18 @@ git config --global user.name "GitHub USERNAMEatarvydas"
 git config --global user.email "youremail@email.com"
 git config --list
 
-- Config file: -
+-------------------------------------------------------
+- Check the Config file: -
 cd ~
 emacs .gitconfig &
+
+- The content of config file should look like this: -
+
+[user]
+	name = atarvydas
+	email = andriustarvydas@outlook.com
+
+-------------------------------------------------------
 
 git clone https://github.com/ATarvydas/reminders.git
 
