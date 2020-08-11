@@ -17,3 +17,14 @@ endmodule // main
 
 iverilog test.v -o test
 vvp test
+
+...But this model only displays a message.
+
+
+How to use gtkwave?
+You need a verilog model and testbench(In reminders folder):
+Verilog model: ver_module.v
+Testbench:     ver_module_tb.v
+
+iverilog -o ver_module_tb.vvp ver_module_tb.v
+vvp ver_module_tb.vvp
