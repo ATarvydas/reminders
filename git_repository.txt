@@ -1,11 +1,21 @@
+-=========================================-
+-= Install git =-
+-=========================================-
+
 sudo apt-get install git
+
+-=========================================-
+-= Set up Git Configuration file =-
+-=========================================-
 
 git config --global user.name "GitHub USERNAMEatarvydas"
 git config --global user.email "youremail@email.com"
 git config --list
 
--------------------------------------------------------
-- Check the Config file: -
+-=========================================-
+-= Check the Config file =-
+-=========================================-
+
 cd ~
 emacs .gitconfig &
 
@@ -15,15 +25,27 @@ emacs .gitconfig &
 	name = atarvydas
 	email = andriustarvydas@outlook.com
 
--------------------------------------------------------
+-=========================================-
+-= Setting up a new repository =-
+-=========================================-
+
+git init
+
+-=========================================-
+-= Cloning an existing repository  =-
+-=========================================-
 
 git clone https://github.com/ATarvydas/reminders.git
+
+-=========================================-
+-= How to add/remove files  =-
+-=========================================-
 
 touch test.txt
 
 git status
 
-git add filename1test.txt
+git add test.txt
 
 git commit -m "Your message"
 
