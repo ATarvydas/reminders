@@ -1,2 +1,0 @@
-sudo apt install gnome-tweak-tool
-Launch Tweaks and go to the Windows section. Select "Sloppy" or "Secondary-Click" under Window Focus.
