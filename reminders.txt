@@ -1,0 +1,169 @@
+-=============================================================================-
+-= Install git =-
+-=============================================================================-
+
+sudo apt-get update
+sudo apt-get install git
+
+-=========================================-
+-= Set up Git Configuration file =-
+-=========================================-
+
+git config --global user.name "GitHub USERNAMEatarvydas"
+git config --global user.email "youremail@email.com"
+git config --list
+
+-=========================================-
+-= Check the Config file =-
+-=========================================-
+
+cd ~
+emacs .gitconfig &
+
+- The content of config file should look like this: -
+
+[user]
+	name = atarvydas
+	email = andriustarvydas@outlook.com
+
+-=========================================-
+-= Setting up a new repository =-
+-=========================================-
+
+git init
+
+-=========================================-
+-= Cloning an existing repository  =-
+-=========================================-
+
+git clone https://github.com/ATarvydas/reminders.git
+
+-=========================================-
+-= How to add/remove files  =-
+-=========================================-
+
+touch test.txt
+
+git status
+
+git add test.txt
+
+git commit -m "Your message"
+
+git push -u origin master
+
+-=============================================================================-
+-= END =-
+-=============================================================================-
+
+
+
+-=============================================================================-
+-= mouse focus =-
+-=============================================================================-
+
+sudo apt install gnome-tweak-tool
+Launch Tweaks and go to the Windows section. Select "Sloppy" or "Secondary-Click" under Window Focus.
+
+-=============================================================================-
+-= END =-
+-=============================================================================-
+
+
+
+-=============================================================================-
+-= Install icarus and gtkwave  =-
+-=============================================================================-
+
+sudo apt-get install iverilog
+sudo apt-get install gtkwave
+
+-=========================================-
+-= A simple example: Create a test.v file =-
+-=========================================-
+
+module main;
+initial
+  begin
+     $display("Hello World");
+     $finish;
+     
+  end
+   
+endmodule // main
+
+-= To simulate =-
+
+iverilog test.v -o test
+vvp test
+
+-=========================================-
+-= How to use gtkwave? =- 
+-=========================================-
+
+You need a verilog model and testbench:
+Verilog model: ver_module.v
+Testbench:     ver_module_tb.v
+
+-=========================================-
+-= ver_module.v =-
+-=========================================-
+
+module buffer(
+              input  A,
+              output B);
+
+   assign B = A;
+   
+   
+endmodule
+
+-=========================================-
+-= ver_module_tb.v =- 
+-=========================================-
+
+`timescale 1ns / 1ns
+`include "ver_module.v"
+
+module ver_module_tb;
+
+   reg A;  //Reg for inputs
+   wire B; //Wire for outputs
+
+   buffer uut(A,B); //Unit Under Test
+
+   initial begin
+
+      $dumpfile("hello_tb.vcd");
+      $dumpvars(0,ver_module_tb);
+
+      A = 0;
+      #20;
+
+      A = 1;
+      #20;
+
+      A = 0;
+      #20;
+
+      $display("Test complete");
+      
+   end
+
+endmodule
+
+-=========================================-
+-= To simulate =-
+-=========================================-
+
+iverilog ver_module_tb.v -o ver_module_tb.vvp
+vvp ver_module_tb.vvp
+
+-= Graphical view of simulation results (.vcd file comes from the testbench) =-
+
+gtkwave hello_tb.vcd
+
+
+-=============================================================================-
+-= END =-
+-=============================================================================-
